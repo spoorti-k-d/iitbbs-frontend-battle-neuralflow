@@ -1,8 +1,8 @@
-const footerLinks = {
-  Product: ["Features", "Pricing", "Changelog", "Roadmap", "Status"],
+const cols = {
+  Product:    ["Features", "Pricing", "Changelog", "Roadmap", "Status"],
   Developers: ["Documentation", "API Reference", "SDKs", "CLI", "GitHub"],
-  Company: ["About", "Blog", "Careers", "Press kit", "Contact"],
-  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy", "DPA"],
+  Company:    ["About", "Blog", "Careers", "Press kit", "Contact"],
+  Legal:      ["Privacy Policy", "Terms of Service", "Cookie Policy", "DPA"],
 };
 
 export default function Footer() {
@@ -10,20 +10,22 @@ export default function Footer() {
     <footer className="footer" role="contentinfo">
       <div className="container">
         <div className="footer-inner">
+          {/* Brand */}
           <div className="footer-brand">
             <a href="#" className="logo" aria-label="NeuralFlow AI">
-              <span className="logo-icon" aria-hidden="true">
+              <span className="logo-mark" aria-hidden="true">
                 <img src="/svgs/cube-16-solid.svg" alt="" />
               </span>
               NeuralFlow
             </a>
             <p>
               The intelligent data automation platform built for engineering teams
-              who demand reliability, speed, and scale.
+              that demand reliability, speed, and scale.
             </p>
           </div>
 
-          {Object.entries(footerLinks).map(([section, links]) => (
+          {/* Link columns */}
+          {Object.entries(cols).map(([section, links]) => (
             <nav key={section} aria-label={`${section} links`} className="footer-col">
               <h4>{section}</h4>
               <ul className="footer-links" role="list">
@@ -41,15 +43,15 @@ export default function Footer() {
           <p className="footer-copy">
             © {new Date().getFullYear()} NeuralFlow AI, Inc. All rights reserved.
           </p>
-          <div className="footer-socials" aria-label="Social links">
+          <div className="footer-socials" aria-label="Social media links">
             <a href="#" className="footer-social" aria-label="GitHub">
-              <img src="/svgs/link.svg" alt="GitHub" />
+              <img src="/svgs/link.svg" alt="" />
             </a>
             <a href="#" className="footer-social" aria-label="Twitter / X">
-              <img src="/svgs/arrow-trending-up.svg" alt="Twitter" />
+              <img src="/svgs/arrow-trending-up.svg" alt="" />
             </a>
             <a href="#" className="footer-social" aria-label="LinkedIn">
-              <img src="/svgs/link-solid.svg" alt="LinkedIn" />
+              <img src="/svgs/link-solid.svg" alt="" />
             </a>
           </div>
         </div>
