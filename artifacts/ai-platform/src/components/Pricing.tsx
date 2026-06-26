@@ -1,11 +1,11 @@
 /**
  * Feature 1: Matrix-Driven Pricing & Performance-Isolated Currency Switcher
  *
- * State isolation strategy:
- * - billingRef / currencyRef are plain refs — never trigger React re-renders
- * - Price DOM nodes updated via ref.textContent directly (priceUpdaters registry)
- * - Button active states toggled via DOM classList — no state involved
- * - Chrome DevTools will show ZERO component activity on billing/currency change
+ * State isolation:
+ * - billingRef / currencyRef → plain refs, never trigger React re-renders
+ * - Price DOM nodes updated via ref.textContent (priceUpdaters registry)
+ * - Button active states toggled via DOM classList
+ * - Chrome DevTools: ZERO component activity on billing/currency change
  */
 import { memo, useCallback, useEffect, useLayoutEffect, useRef } from "react";
 
@@ -18,7 +18,7 @@ type TierKey  = "starter" | "pro" | "enterprise";
 
 interface Tier {
   name:     string;
-  baseUSD:  number;   // monthly base in USD
+  baseUSD:  number;
   desc:     string;
   features: string[];
   popular?: boolean;
@@ -26,9 +26,8 @@ interface Tier {
 
 const TIERS: Record<TierKey, Tier> = {
   starter: {
-    name:    "Starter",
-    baseUSD: 49,
-    desc:    "Perfect for small teams exploring data automation.",
+    name: "Starter", baseUSD: 49,
+    desc: "Perfect for small teams exploring data automation.",
     features: [
       "Up to 5 pipelines",
       "500K records / month",
@@ -38,10 +37,8 @@ const TIERS: Record<TierKey, Tier> = {
     ],
   },
   pro: {
-    name:    "Pro",
-    baseUSD: 149,
-    popular: true,
-    desc:    "For growing teams running production workloads.",
+    name: "Pro", baseUSD: 149, popular: true,
+    desc: "For growing teams running production workloads.",
     features: [
       "Unlimited pipelines",
       "50M records / month",
@@ -52,9 +49,8 @@ const TIERS: Record<TierKey, Tier> = {
     ],
   },
   enterprise: {
-    name:    "Enterprise",
-    baseUSD: 399,
-    desc:    "For orgs requiring compliance and custom SLAs.",
+    name: "Enterprise", baseUSD: 399,
+    desc: "For orgs requiring compliance and custom SLAs.",
     features: [
       "Unlimited everything",
       "Custom record limits",
@@ -66,15 +62,14 @@ const TIERS: Record<TierKey, Tier> = {
   },
 };
 
-/* Regional tariff table (multiplier = conversion × regional pricing factor) */
+/* Regional tariff table */
 const TARIFF: Record<Currency, { symbol: string; mult: number }> = {
   USD: { symbol: "$",  mult: 1.00   },
   EUR: { symbol: "€",  mult: 0.92   },
   INR: { symbol: "₹",  mult: 83.12  },
 };
 
-/* 20% annual discount per spec */
-const ANNUAL_MULT = 0.80;
+const ANNUAL_MULT = 0.80; // 20% annual discount per spec
 
 function compute(tier: TierKey, currency: Currency, billing: Billing) {
   const { baseUSD } = TIERS[tier];
@@ -92,11 +87,11 @@ function compute(tier: TierKey, currency: Currency, billing: Billing) {
   };
 }
 
-/* Global registry of DOM-update callbacks (one per price card) */
+/* Global registry of DOM-update callbacks */
 const updaters: Array<() => void> = [];
 
 /* -----------------------------------------------------------------------
-   PriceDisplay — isolated leaf. Updates text nodes directly, never re-renders.
+   PriceDisplay — isolated leaf. Never re-renders after mount.
    ----------------------------------------------------------------------- */
 const PriceDisplay = memo(function PriceDisplay({
   tier,
@@ -116,6 +111,12 @@ const PriceDisplay = memo(function PriceDisplay({
     if (symEl.current)  symEl.current.textContent  = symbol;
     if (numEl.current)  numEl.current.textContent  = amount;
     if (noteEl.current) noteEl.current.textContent = note;
+    // Brief flash to indicate value changed
+    if (numEl.current) {
+      numEl.current.classList.remove("price-flash");
+      void numEl.current.offsetWidth; // reflow trigger
+      numEl.current.classList.add("price-flash");
+    }
   }, [tier, currRef, billRef]);
 
   useLayoutEffect(() => {
@@ -162,15 +163,10 @@ const PriceCard = memo(function PriceCard({
       {tier.popular && (
         <div className="featured-badge" aria-label="Most popular">Most Popular</div>
       )}
-
       <p className="price-tier-label">{tier.name}</p>
-
-      {/* Only these DOM text nodes will change on currency/billing switch */}
       <PriceDisplay tier={tierKey} currRef={currRef} billRef={billRef} />
-
       <p className="price-desc">{tier.desc}</p>
       <div className="price-divider" aria-hidden="true" />
-
       <ul className="price-features" aria-label={`${tier.name} features`}>
         {tier.features.map((f) => (
           <li className="price-feat-item" key={f}>
@@ -179,7 +175,6 @@ const PriceCard = memo(function PriceCard({
           </li>
         ))}
       </ul>
-
       <a
         href="#"
         className={`btn ${tier.popular ? "btn-primary" : "btn-outline-gold"}`}
@@ -203,7 +198,7 @@ const PriceCard = memo(function PriceCard({
 });
 
 /* -----------------------------------------------------------------------
-   Pricing — parent. currencyRef / billingRef are refs, never state.
+   Pricing — parent. All state via refs — zero React re-renders on change.
    ----------------------------------------------------------------------- */
 export default function Pricing() {
   const currencyRef = useRef<Currency>("USD");
@@ -238,7 +233,6 @@ export default function Pricing() {
     [flush],
   );
 
-  // Set initial active states via DOM (no state change)
   useEffect(() => {
     billingBtns.current[0]?.classList.add("active");
     billingBtns.current[0]?.setAttribute("aria-pressed", "true");
@@ -252,7 +246,7 @@ export default function Pricing() {
   return (
     <section id="pricing" className="pricing-section" aria-labelledby="pricing-heading">
       <div className="container">
-        <header className="section-header">
+        <header className="section-header reveal">
           <div className="section-label">
             <img src="/svgs/chart-pie.svg" alt="" />
             Pricing
@@ -262,7 +256,7 @@ export default function Pricing() {
         </header>
 
         {/* Controls — DOM-only updates, zero React re-renders */}
-        <div className="pricing-controls" role="group" aria-label="Pricing options">
+        <div className="pricing-controls reveal" role="group" aria-label="Pricing options">
           <div className="toggle-wrap" role="group" aria-label="Billing cycle">
             {(["monthly", "annual"] as Billing[]).map((val, i) => (
               <button
@@ -293,8 +287,7 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* Cards — only inner price text nodes update, never the cards themselves */}
-        <div className="pricing-grid" role="list" aria-label="Pricing plans">
+        <div className="pricing-grid reveal-stagger" role="list" aria-label="Pricing plans">
           {(["starter", "pro", "enterprise"] as TierKey[]).map((key) => (
             <PriceCard
               key={key}
@@ -305,7 +298,7 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p className="pricing-note-bottom">
+        <p className="pricing-note-bottom reveal">
           Need a custom plan?{" "}
           <a href="#">Talk to our team</a>
           {" · "}

@@ -35,7 +35,7 @@ export default function Features() {
   return (
     <section id="features" className="features-section" aria-labelledby="features-heading">
       <div className="container">
-        <header className="section-header">
+        <header className="section-header reveal">
           <div className="section-label">
             <img src="/svgs/cog-8-tooth.svg" alt="" />
             Core capabilities
@@ -47,7 +47,7 @@ export default function Features() {
           </p>
         </header>
 
-        <div className="features-grid" role="list">
+        <div className="features-grid reveal-stagger" role="list">
           {features.map((f) => (
             <article className="feat-card" key={f.title} role="listitem">
               <div className="feat-icon" aria-hidden="true">

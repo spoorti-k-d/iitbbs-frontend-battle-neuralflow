@@ -2,7 +2,7 @@ export default function CTA() {
   return (
     <section className="cta-section" aria-labelledby="cta-heading">
       <div className="container">
-        <div className="cta-box">
+        <div className="cta-box reveal">
           <div className="cta-orb" aria-hidden="true" />
 
           <div className="section-label" style={{ marginBottom: 24 }}>

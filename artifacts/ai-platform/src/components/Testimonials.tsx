@@ -47,7 +47,7 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="testimonials-section" aria-labelledby="testi-heading">
       <div className="container">
-        <header className="section-header">
+        <header className="section-header reveal">
           <div className="section-label">
             <img src="/svgs/arrow-trending-up.svg" alt="" />
             Customer stories
@@ -55,7 +55,7 @@ export default function Testimonials() {
           <h2 id="testi-heading">Loved by engineering teams worldwide</h2>
         </header>
 
-        <div className="testimonials-grid" role="list">
+        <div className="testimonials-grid reveal-stagger" role="list">
           {testimonials.map((t) => (
             <article className="testi-card" key={t.name} role="listitem">
               <div className="testi-stars" aria-label={`${t.stars} out of 5 stars`}>

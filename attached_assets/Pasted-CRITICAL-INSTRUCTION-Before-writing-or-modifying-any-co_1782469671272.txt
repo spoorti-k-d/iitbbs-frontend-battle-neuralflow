@@ -1,0 +1,1096 @@
+CRITICAL INSTRUCTION
+
+Before writing or modifying any code, explicitly inspect every uploaded file individually:
+
+* Official Problem Statement PDF
+* demo.mp4
+* colorPalette.pdf
+* fonts.pdf
+* Every uploaded SVG
+
+Do not assume or approximate their contents.
+
+Treat the uploaded files as the single source of truth.
+
+Before making any code changes, first summarize your understanding of:
+
+1. The official judging criteria.
+2. The demo.mp4 structure and motion.
+3. The official color palette.
+4. The official typography.
+5. The provided SVG assets and where they should be used.
+
+Only after demonstrating that you have understood the uploaded files should you begin modifying the existing project.
+
+Do NOT regenerate the project. Refine the current implementation only.
+
+If any banned library is actually used in the implementation, replace that implementation with an equivalent solution using plain React and CSS. If a banned library is only present as an unused dependency, do not spend time refactoring unrelated code.
+
+After finishing, provide a checklist showing how every requirement from the official problem statement has been satisfied.
+
+Before making any code changes, explicitly inspect every uploaded file (PDF, MP4, SVGs, fonts, and color palette). Do not assume their contents. Base every modification on those uploaded assets rather than generic AI knowledge.
+
+OFFICIAL FRONTEND BATTLE PHASE 1 REQUIREMENTS
+
+Treat these as mandatory acceptance criteria.
+
+1. Use ONLY the uploaded assets:
+
+* Official SVG pack
+* Official color palette
+* Official font specification
+* Official demo.mp4
+
+2. Match the uploaded demo.mp4 as closely as possible:
+
+* Layout structure
+* Section ordering
+* Motion
+* Hover interactions
+* Scroll reveal
+* Spacing
+* Visual hierarchy
+
+3. Feature 1 (Mandatory)
+   Implement a dynamic pricing engine using a multi-dimensional configuration object.
+   Support:
+
+* Monthly / Annual
+* INR / USD / EUR
+* 20% annual discount
+* Regional tariff variables
+  No hardcoded displayed prices.
+
+4. Feature 2 (Mandatory)
+   Desktop:
+   Responsive Bento Grid.
+
+Mobile:
+Accordion.
+
+If the active Bento card is being interacted with and the viewport changes to mobile, automatically keep the matching Accordion panel open.
+
+Implement using plain React and CSS.
+
+5. Forbidden
+   Do NOT use:
+
+* Framer Motion
+* Radix UI
+* HeadlessUI
+* Shadcn
+* Tailwind UI
+* Any external UI or animation libraries for Feature 2.
+
+6. Motion
+   Hover:
+   150–200ms ease-out.
+
+Layout:
+300–400ms ease-in-out.
+
+Use native CSS transitions or the Web Animations API only.
+
+7. SEO
+   Include:
+
+* Semantic HTML
+* Title
+* Meta description
+* Open Graph
+* Canonical
+* Single H1
+* Proper heading hierarchy
+* Alt text
+* ARIA labels
+
+8. Performance
+   Avoid unnecessary re-renders.
+   Avoid layout thrashing.
+   Optimize SVG rendering.
+   Maintain fast Time to Interactive.
+
+9. Asset Compliance
+   Replace generic icons with the uploaded SVG assets.
+   Use only the uploaded fonts.
+   Use only the uploaded color palette.
+
+10. Final Validation
+    Before making changes, compare the implementation against the uploaded demo.mp4 and modify the current project only where necessary to maximize compliance with the official judging criteria.
+
+IMPORTANT: Do NOT regenerate the project from scratch.
+
+The current implementation already has a strong structure and responsive layout.
+
+Your task is to refine the existing codebase to maximize the FrontEnd Battle Phase 1 score while preserving the current architecture.
+
+Before making any changes, analyze ALL uploaded files:
+
+* Official Problem Statement PDF
+* demo.mp4
+* colorPalette.pdf
+* fonts.pdf
+* All uploaded SVG assets
+
+Strictly follow every requirement from the official PDF.
+
+=========================
+GENERAL
+=======
+
+Do not create a new project.
+
+Do not redesign everything.
+
+Modify only what is necessary.
+
+Preserve the current React architecture.
+
+Keep components modular.
+
+Keep performance high.
+
+=========================
+MATCH THE DEMO
+==============
+
+Carefully analyze demo.mp4.
+
+Adjust the current implementation to more closely match:
+
+* section ordering
+* spacing
+* layout proportions
+* visual hierarchy
+* hover behavior
+* reveal animations
+* motion timing
+* interaction polish
+
+Do not over-animate.
+
+Use subtle premium SaaS motion similar to the reference.
+
+=========================
+COLOR PALETTE
+=============
+
+Replace the current accent colors with ONLY the official palette.
+
+Primary Background:
+#172B36
+
+Secondary:
+#114C5A
+
+Primary CTA:
+#FFC801
+
+Secondary Accent:
+#FF9932
+
+Light:
+#F1F6F4
+
+Muted:
+#D9E8E2
+
+Remove any purple or blue accent colors that are not part of the official palette.
+
+=========================
+FONTS
+=====
+
+Use only:
+
+Inter
+
+JetBrains Mono
+
+=========================
+SVG ASSETS
+==========
+
+Stop using generic icon libraries.
+
+Replace icons with the uploaded SVG assets wherever appropriate.
+
+Integrate the provided SVGs naturally into:
+
+Hero
+
+Feature cards
+
+Pricing
+
+Buttons
+
+Accordion
+
+Footer
+
+Do not add external icons.
+
+=========================
+FEATURE 1
+=========
+
+Ensure pricing uses:
+
+Three currencies
+
+Monthly
+
+Annual
+
+20% discount
+
+Regional tariff
+
+Multi-dimensional configuration object
+
+No hardcoded UI values.
+
+Ensure changing currency or billing updates only the price text and avoids unnecessary parent re-renders.
+
+=========================
+FEATURE 2
+=========
+
+Desktop:
+
+Responsive Bento Grid
+
+Mobile:
+
+Accordion
+
+When resizing from desktop to mobile, preserve the active Bento card so the corresponding accordion item automatically opens.
+
+Implement using plain React and CSS.
+
+Do not use Radix UI, Shadcn, HeadlessUI, Framer Motion, or any external UI or animation libraries.
+
+=========================
+ANIMATIONS
+==========
+
+Use only CSS transitions and CSS animations.
+
+Hover:
+150–200ms ease-out
+
+Layout:
+300–400ms ease-in-out
+
+Add:
+
+Hero reveal
+
+Section reveal
+
+Card hover lift
+
+Button hover glow
+
+Pricing transition
+
+Accordion transition
+
+Subtle premium micro-interactions
+
+=========================
+SEO
+===
+
+Ensure:
+
+Semantic HTML
+
+Title
+
+Meta description
+
+Open Graph tags
+
+Twitter tags
+
+Canonical URL
+
+Single H1
+
+Heading hierarchy
+
+Alt text
+
+ARIA labels
+
+=========================
+PERFORMANCE
+===========
+
+Remove unused imports.
+
+Remove unused libraries from the implementation where possible.
+
+Avoid layout thrashing.
+
+Avoid unnecessary re-renders.
+
+Optimize SVG rendering.
+
+Keep the project lightweight.
+
+=========================
+FINAL VALIDATION
+================
+
+Before finishing, verify that:
+
+* The implementation follows the official problem statement.
+* The uploaded demo.mp4 has been reflected in the layout and motion.
+* The official SVG assets are being used.
+* The official color palette is applied.
+* No banned libraries are used in the implemented solution.
+* The application builds successfully without errors.
+
+Modify only what is necessary to maximize the competition score while preserving the existing project.
+
+DEMO VIDEO ANALYSIS (IMPORTANT)
+
+Treat the uploaded demo.mp4 as the primary design reference.
+
+The current implementation should be modified to closely resemble the structure, motion language and premium feel demonstrated in the demo.
+
+The demo is NOT a colorful startup landing page.
+
+It follows a premium enterprise SaaS design similar to Linear, Vercel and Apple.
+
+Key observations from the demo:
+
+1. Overall Style
+
+* Dark premium aesthetic.
+* Large amounts of whitespace.
+* Thin borders.
+* Minimalistic UI.
+* High visual hierarchy.
+* Elegant typography.
+* Enterprise feel rather than playful design.
+
+2. Hero Section
+
+* Large bold heading.
+* Supporting description underneath.
+* Strong primary CTA.
+* Professional dashboard/product preview.
+* Rich background using gradients and subtle lighting instead of flat colors.
+* Smooth fade-in entrance.
+
+3. Section Flow
+   The page follows a storytelling approach instead of isolated sections.
+
+Hero
+↓
+
+Trusted companies / social proof
+
+↓
+
+Feature showcase
+
+↓
+
+Advanced AI workflow presentation
+
+↓
+
+Pricing
+
+↓
+
+Testimonials
+
+↓
+
+Call To Action
+
+↓
+
+Footer
+
+Transitions between sections should feel smooth and connected.
+
+4. Feature Presentation
+   Desktop uses premium cards with clean spacing.
+
+Cards feel interactive.
+
+Hover effects are subtle:
+
+* slight lift
+* soft shadow
+* gentle border glow
+* smooth transitions
+
+5. Motion Language
+   Motion is restrained and premium.
+
+Use:
+
+* fade in
+* translateY
+* small scale
+* opacity transitions
+* section reveal while scrolling
+
+Avoid dramatic animations.
+
+6. Pricing Section
+   Pricing cards feel polished.
+
+Toggle interactions should smoothly animate between Monthly and Annual.
+
+Do not instantly replace values.
+
+7. Testimonials
+   Cards reveal progressively.
+
+Subtle hover.
+
+Clean spacing.
+
+Professional presentation.
+
+8. CTA
+   Large centered CTA.
+
+Strong contrast.
+
+Generous whitespace.
+
+9. Footer
+   Minimal.
+
+Clean.
+
+Organized.
+
+10. Animation Timing
+
+Hover
+150–200ms ease-out.
+
+Layout transitions
+300–400ms ease-in-out.
+
+11. Visual Consistency
+
+Maintain:
+
+* consistent spacing
+* consistent border radius
+* consistent shadows
+* consistent typography
+* consistent card styling
+
+12. Goal
+
+Do NOT clone the demo pixel-for-pixel.
+
+Instead, make the current implementation feel architecturally and visually consistent with the uploaded demo while preserving the existing React structure.
+
+Shall I give it as an ultimate prompt?
+ 
+
+
+
+
+Before making any code changes, explicitly inspect every uploaded file (PDF, MP4, SVGs, fonts, and color palette). Do not assume their contents. Base every modification on those uploaded assets rather than generic AI knowledge.
+
+OFFICIAL FRONTEND BATTLE PHASE 1 REQUIREMENTS
+
+Treat these as mandatory acceptance criteria.
+
+1. Use ONLY the uploaded assets:
+
+* Official SVG pack
+* Official color palette
+* Official font specification
+* Official demo.mp4
+
+2. Match the uploaded demo.mp4 as closely as possible:
+
+* Layout structure
+* Section ordering
+* Motion
+* Hover interactions
+* Scroll reveal
+* Spacing
+* Visual hierarchy
+
+3. Feature 1 (Mandatory)
+   Implement a dynamic pricing engine using a multi-dimensional configuration object.
+   Support:
+
+* Monthly / Annual
+* INR / USD / EUR
+* 20% annual discount
+* Regional tariff variables
+  No hardcoded displayed prices.
+
+4. Feature 2 (Mandatory)
+   Desktop:
+   Responsive Bento Grid.
+
+Mobile:
+Accordion.
+
+If the active Bento card is being interacted with and the viewport changes to mobile, automatically keep the matching Accordion panel open.
+
+Implement using plain React and CSS.
+
+5. Forbidden
+   Do NOT use:
+
+* Framer Motion
+* Radix UI
+* HeadlessUI
+* Shadcn
+* Tailwind UI
+* Any external UI or animation libraries for Feature 2.
+
+6. Motion
+   Hover:
+   150–200ms ease-out.
+
+Layout:
+300–400ms ease-in-out.
+
+Use native CSS transitions or the Web Animations API only.
+
+7. SEO
+   Include:
+
+* Semantic HTML
+* Title
+* Meta description
+* Open Graph
+* Canonical
+* Single H1
+* Proper heading hierarchy
+* Alt text
+* ARIA labels
+
+8. Performance
+   Avoid unnecessary re-renders.
+   Avoid layout thrashing.
+   Optimize SVG rendering.
+   Maintain fast Time to Interactive.
+
+9. Asset Compliance
+   Replace generic icons with the uploaded SVG assets.
+   Use only the uploaded fonts.
+   Use only the uploaded color palette.
+
+10. Final Validation
+    Before making changes, compare the implementation against the uploaded demo.mp4 and modify the current project only where necessary to maximize compliance with the official judging criteria.
+
+IMPORTANT: Do NOT regenerate the project from scratch.
+
+The current implementation already has a strong structure and responsive layout.
+
+Your task is to refine the existing codebase to maximize the FrontEnd Battle Phase 1 score while preserving the current architecture.
+
+Before making any changes, analyze ALL uploaded files:
+
+* Official Problem Statement PDF
+* demo.mp4
+* colorPalette.pdf
+* fonts.pdf
+* All uploaded SVG assets
+
+Strictly follow every requirement from the official PDF.
+
+=========================
+GENERAL
+=======
+
+Do not create a new project.
+
+Do not redesign everything.
+
+Modify only what is necessary.
+
+Preserve the current React architecture.
+
+Keep components modular.
+
+Keep performance high.
+
+=========================
+MATCH THE DEMO
+==============
+
+Carefully analyze demo.mp4.
+
+Adjust the current implementation to more closely match:
+
+* section ordering
+* spacing
+* layout proportions
+* visual hierarchy
+* hover behavior
+* reveal animations
+* motion timing
+* interaction polish
+
+Do not over-animate.
+
+Use subtle premium SaaS motion similar to the reference.
+
+=========================
+COLOR PALETTE
+=============
+
+Replace the current accent colors with ONLY the official palette.
+
+Primary Background:
+#172B36
+
+Secondary:
+#114C5A
+
+Primary CTA:
+#FFC801
+
+Secondary Accent:
+#FF9932
+
+Light:
+#F1F6F4
+
+Muted:
+#D9E8E2
+
+Remove any purple or blue accent colors that are not part of the official palette.
+
+=========================
+FONTS
+=====
+
+Use only:
+
+Inter
+
+JetBrains Mono
+
+=========================
+SVG ASSETS
+==========
+
+Stop using generic icon libraries.
+
+Replace icons with the uploaded SVG assets wherever appropriate.
+
+Integrate the provided SVGs naturally into:
+
+Hero
+
+Feature cards
+
+Pricing
+
+Buttons
+
+Accordion
+
+Footer
+
+Do not add external icons.
+
+=========================
+FEATURE 1
+=========
+
+Ensure pricing uses:
+
+Three currencies
+
+Monthly
+
+Annual
+
+20% discount
+
+Regional tariff
+
+Multi-dimensional configuration object
+
+No hardcoded UI values.
+
+Ensure changing currency or billing updates only the price text and avoids unnecessary parent re-renders.
+
+=========================
+FEATURE 2
+=========
+
+Desktop:
+
+Responsive Bento Grid
+
+Mobile:
+
+Accordion
+
+When resizing from desktop to mobile, preserve the active Bento card so the corresponding accordion item automatically opens.
+
+Implement using plain React and CSS.
+
+Do not use Radix UI, Shadcn, HeadlessUI, Framer Motion, or any external UI or animation libraries.
+
+=========================
+ANIMATIONS
+==========
+
+Use only CSS transitions and CSS animations.
+
+Hover:
+150–200ms ease-out
+
+Layout:
+300–400ms ease-in-out
+
+Add:
+
+Hero reveal
+
+Section reveal
+
+Card hover lift
+
+Button hover glow
+
+Pricing transition
+
+Accordion transition
+
+Subtle premium micro-interactions
+
+=========================
+SEO
+===
+
+Ensure:
+
+Semantic HTML
+
+Title
+
+Meta description
+
+Open Graph tags
+
+Twitter tags
+
+Canonical URL
+
+Single H1
+
+Heading hierarchy
+
+Alt text
+
+ARIA labels
+
+=========================
+PERFORMANCE
+===========
+
+Remove unused imports.
+
+Remove unused libraries from the implementation where possible.
+
+Avoid layout thrashing.
+
+Avoid unnecessary re-renders.
+
+Optimize SVG rendering.
+
+Keep the project lightweight.
+
+=========================
+FINAL VALIDATION
+================
+
+Before finishing, verify that:
+
+* The implementation follows the official problem statement.
+* The uploaded demo.mp4 has been reflected in the layout and motion.
+* The official SVG assets are being used.
+* The official color palette is applied.
+* No banned libraries are used in the implemented solution.
+* The application builds successfully without errors.
+
+Modify only what is necessary to maximize the competition score while preserving the existing project.
+
+DEMO VIDEO ANALYSIS (IMPORTANT)
+
+Treat the uploaded demo.mp4 as the primary design reference.
+
+The current implementation should be modified to closely resemble the structure, motion language and premium feel demonstrated in the demo.
+
+The demo is NOT a colorful startup landing page.
+
+It follows a premium enterprise SaaS design similar to Linear, Vercel and Apple.
+
+Key observations from the demo:
+
+1. Overall Style
+
+* Dark premium aesthetic.
+* Large amounts of whitespace.
+* Thin borders.
+* Minimalistic UI.
+* High visual hierarchy.
+* Elegant typography.
+* Enterprise feel rather than playful design.
+
+2. Hero Section
+
+* Large bold heading.
+* Supporting description underneath.
+* Strong primary CTA.
+* Professional dashboard/product preview.
+* Rich background using gradients and subtle lighting instead of flat colors.
+* Smooth fade-in entrance.
+
+3. Section Flow
+   The page follows a storytelling approach instead of isolated sections.
+
+Hero
+↓
+
+Trusted companies / social proof
+
+↓
+
+Feature showcase
+
+↓
+
+Advanced AI workflow presentation
+
+↓
+
+Pricing
+
+↓
+
+Testimonials
+
+↓
+
+Call To Action
+
+↓
+
+Footer
+
+Transitions between sections should feel smooth and connected.
+
+4. Feature Presentation
+   Desktop uses premium cards with clean spacing.
+
+Cards feel interactive.
+
+Hover effects are subtle:
+
+* slight lift
+* soft shadow
+* gentle border glow
+* smooth transitions
+
+5. Motion Language
+   Motion is restrained and premium.
+
+Use:
+
+* fade in
+* translateY
+* small scale
+* opacity transitions
+* section reveal while scrolling
+
+Avoid dramatic animations.
+
+6. Pricing Section
+   Pricing cards feel polished.
+
+Toggle interactions should smoothly animate between Monthly and Annual.
+
+Do not instantly replace values.
+
+7. Testimonials
+   Cards reveal progressively.
+
+Subtle hover.
+
+Clean spacing.
+
+Professional presentation.
+
+8. CTA
+   Large centered CTA.
+
+Strong contrast.
+
+Generous whitespace.
+
+9. Footer
+   Minimal.
+
+Clean.
+
+Organized.
+
+10. Animation Timing
+
+Hover
+150–200ms ease-out.
+
+Layout transitions
+300–400ms ease-in-out.
+
+11. Visual Consistency
+
+Maintain:
+
+* consistent spacing
+* consistent border radius
+* consistent shadows
+* consistent typography
+* consistent card styling
+
+12. Goal
+
+Do NOT clone the demo pixel-for-pixel.
+
+Instead, make the current implementation feel architecturally and visually consistent with the uploaded demo while preserving the existing React structure.
+
+If any banned library is actually used in the implementation, replace that implementation with an equivalent solution using plain React and CSS. If the banned library is only present as an unused dependency, do not spend time refactoring unrelated code.
+
+=========================
+OPTIONAL PREMIUM POLISH
+=======================
+
+After ALL mandatory competition requirements have been fully implemented and verified, enhance the landing page with subtle premium interactions only if they do not negatively affect performance, accessibility, responsiveness, SEO, or Time to Interactive.
+
+These enhancements must remain lightweight and use only native CSS and JavaScript.
+
+Add the following if appropriate:
+
+1. Mouse Spotlight
+
+* Soft radial spotlight following the cursor on desktop only.
+* Very subtle opacity.
+* Disabled on touch devices.
+
+2. Scroll Progress Indicator
+
+* Thin progress bar fixed at the top.
+* Uses the official color palette.
+* Smooth animation.
+
+3. Animated Statistics
+
+* Animate KPI numbers using requestAnimationFrame.
+* Play only once when entering the viewport.
+* No external libraries.
+
+4. Hero Sequential Entrance
+
+* Headline
+* Subtitle
+* CTA
+* Dashboard preview
+  Appear sequentially using fade + translateY.
+
+5. Section Reveal Animation
+
+* Reveal sections on first scroll into view.
+* Fade + slight translateY.
+* Use IntersectionObserver.
+* Trigger only once.
+
+6. Premium Card Hover
+
+* Slight elevation.
+* Soft shadow.
+* Border glow using official colors.
+* Smooth transitions.
+
+7. Button Polish
+
+* Subtle hover glow.
+* Slight scale.
+* Smooth shadow transition.
+* Maintain accessibility.
+
+8. Pricing Transition
+
+* Animate price changes with opacity and translateY.
+* Keep state logic unchanged.
+* Do not introduce unnecessary re-renders.
+
+9. Professional Footer
+
+* Smooth underline animation.
+* Better hover feedback.
+* Consistent spacing.
+
+10. AI Terminal Preview (Hero)
+    Create a small terminal-style panel demonstrating an AI workflow.
+
+Example:
+
+> Initializing AI Platform...
+> ✓ Data Sources Connected
+> ✓ AI Models Loaded
+> ✓ Automation Ready
+
+Display the lines progressively using a lightweight typing effect built with CSS and React only.
+
+=========================
+PERFORMANCE RULE
+================
+
+Every enhancement must:
+
+* Use CSS transitions or CSS animations only.
+* Avoid layout thrashing.
+* Avoid unnecessary React renders.
+* Avoid heavy JavaScript.
+* Avoid external libraries.
+* Preserve a fast Time to Interactive.
+* Be removable without affecting the application architecture.
+
+=========================
+QUALITY CHECK
+=============
+
+Do NOT add any enhancement that makes the UI feel cluttered or flashy.
+
+The final result should feel premium, elegant, enterprise-grade, and consistent with the uploaded demo.mp4, similar in quality to Linear, Vercel, and Stripe.
+
+
+
+
+Shall I give this as an ultimate prompt?
+ 
+
+
+ 
+
+
+

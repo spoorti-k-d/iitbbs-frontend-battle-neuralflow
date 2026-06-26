@@ -1,8 +1,8 @@
 /**
  * Feature 2: Bento-to-Accordion with State Persistence
  * - Desktop: 12-col Bento Grid, activeIndex tracked on hover
- * - Mobile:  Accordion (zero external deps, pure CSS transitions)
- * - Resize crossing breakpoint: activeIndex transferred seamlessly
+ * - Mobile:  Accordion (zero external deps, pure CSS max-height transitions)
+ * - Resize crossing 768px: activeIndex transferred seamlessly
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -23,7 +23,7 @@ const ITEMS: Item[] = [
     id: 0,
     icon: "/svgs/arrow-path.svg",
     title: "Autonomous Pipeline Recovery",
-    desc: "When a node fails, NeuralFlow's self-healing engine diagnoses the root cause, reroutes data flow, and restores the pipeline — all without human intervention. Mean time to recovery: under 8 seconds.",
+    desc: "When a node fails, NeuralFlow's self-healing engine diagnoses the root cause, reroutes data flow, and restores the pipeline — without human intervention. Mean time to recovery: under 8 seconds.",
     tags: ["Self-healing", "Zero downtime"],
     col: "col-8",
     bars: [
@@ -112,10 +112,7 @@ function BentoCell({
             <div className="bento-bar-row" key={b.label}>
               <span className="bbar-label">{b.label}</span>
               <div className="bbar-track">
-                <div
-                  className="bbar-fill"
-                  style={{ width: active ? `${b.pct}%` : "18%" }}
-                />
+                <div className="bbar-fill" style={{ width: active ? `${b.pct}%` : "18%" }} />
               </div>
               <span className="bbar-val">{b.pct}%</span>
             </div>
@@ -186,7 +183,7 @@ function AccordionItem({
 
 /* -----------------------------------------------------------------------
    BentoFeatures — orchestrator
-   Shared activeIndex state drives BOTH bento hover AND accordion open panel.
+   Shared activeIndex drives BOTH bento hover AND accordion open panel.
    On resize crossing the breakpoint the index is preserved automatically.
    ----------------------------------------------------------------------- */
 export default function BentoFeatures() {
@@ -194,18 +191,12 @@ export default function BentoFeatures() {
   const isMobileRef = useRef(typeof window !== "undefined" && window.innerWidth < BREAKPOINT);
 
   useEffect(() => {
-    const handler = () => {
-      const nowMobile = window.innerWidth < BREAKPOINT;
-      // On transition desktop→mobile: leave activeIndex as-is so the
-      // corresponding accordion panel opens immediately.
-      // On transition mobile→desktop: same — bento highlights the cell.
-      isMobileRef.current = nowMobile;
-    };
+    const handler = () => { isMobileRef.current = window.innerWidth < BREAKPOINT; };
     window.addEventListener("resize", handler, { passive: true });
     return () => window.removeEventListener("resize", handler);
   }, []);
 
-  const handleEnter  = useCallback((id: number) => setActiveIndex(id),  []);
+  const handleEnter  = useCallback((id: number) => setActiveIndex(id), []);
   const handleLeave  = useCallback(() => setActiveIndex(null), []);
   const handleToggle = useCallback(
     (id: number) => setActiveIndex((prev) => (prev === id ? null : id)),
@@ -215,7 +206,7 @@ export default function BentoFeatures() {
   return (
     <section id="capabilities" className="bento-section" aria-labelledby="bento-heading">
       <div className="container">
-        <header className="bento-header">
+        <header className="bento-header reveal">
           <div className="section-label">
             <img src="/svgs/arrow-path.svg" alt="" />
             Platform capabilities

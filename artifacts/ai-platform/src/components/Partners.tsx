@@ -12,8 +12,8 @@ export default function Partners() {
   return (
     <section className="partners" aria-label="Trusted by teams at">
       <div className="container">
-        <p className="partners-label">Trusted by engineering teams at</p>
-        <div className="partners-row" role="list">
+        <p className="partners-label reveal">Trusted by engineering teams at</p>
+        <div className="partners-row reveal" role="list">
           {partners.map((p) => (
             <span className="partner-logo" key={p.name} role="listitem" aria-label={p.name}>
               <img src={p.icon} alt="" aria-hidden="true" />

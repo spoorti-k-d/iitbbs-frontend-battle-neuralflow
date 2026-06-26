@@ -1094,3 +1094,295 @@ h3 { font-size: clamp(1rem, 2vw, 1.25rem); }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
   .pricing-controls { flex-direction: column; gap: 10px; }
 }
+
+/* =========================================================
+   SCROLL REVEAL — IntersectionObserver + CSS only
+   ========================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity  0.55s var(--ease-out),
+    transform 0.55s var(--ease-out);
+  will-change: opacity, transform;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Staggered children */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity  0.5s var(--ease-out),
+    transform 0.5s var(--ease-out);
+  will-change: opacity, transform;
+}
+.reveal-stagger.revealed > *:nth-child(1) { transition-delay: 0.00s; }
+.reveal-stagger.revealed > *:nth-child(2) { transition-delay: 0.07s; }
+.reveal-stagger.revealed > *:nth-child(3) { transition-delay: 0.14s; }
+.reveal-stagger.revealed > *:nth-child(4) { transition-delay: 0.21s; }
+.reveal-stagger.revealed > *:nth-child(5) { transition-delay: 0.28s; }
+.reveal-stagger.revealed > *:nth-child(6) { transition-delay: 0.35s; }
+.reveal-stagger.revealed > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   DASHBOARD PREVIEW — Hero product mockup
+   ========================================================= */
+.hero-preview {
+  position: relative;
+  max-width: 900px;
+  margin: 60px auto 0;
+  animation: scale-in 0.45s var(--ease-out) 0.3s both;
+}
+.hero-preview-glow {
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(255,200,1,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.dashboard {
+  background: rgba(17, 43, 56, 0.92);
+  border: 1px solid rgba(255, 200, 1, 0.2);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow:
+    0 0 80px rgba(255, 200, 1, 0.06),
+    0 40px 80px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+}
+.dashboard-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(17, 76, 90, 0.35);
+}
+.db-dots { display: flex; gap: 6px; }
+.db-dot  { width: 10px; height: 10px; border-radius: 50%; }
+.db-dot-r { background: #ff5f57; }
+.db-dot-y { background: #febc2e; }
+.db-dot-g { background: #28c840; }
+.db-breadcrumb {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.db-breadcrumb span { color: var(--forsythia); }
+.db-status {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  color: var(--clr-green);
+}
+.db-status-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--clr-green);
+  animation: dot-pulse 2s ease-in-out infinite;
+}
+.dashboard-body {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: 260px;
+}
+.db-sidebar {
+  border-right: 1px solid var(--border);
+  padding: 16px 14px;
+  background: rgba(17, 76, 90, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.db-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: default;
+  transition: background var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out);
+}
+.db-nav-item.active {
+  background: rgba(255, 200, 1, 0.1);
+  color: var(--forsythia);
+  border: 1px solid rgba(255, 200, 1, 0.18);
+}
+.db-nav-item img {
+  width: 14px; height: 14px;
+  flex-shrink: 0;
+}
+.db-nav-item.active img {
+  filter: brightness(0) saturate(100%) invert(83%) sepia(80%) saturate(900%) hue-rotate(5deg) brightness(102%);
+}
+.db-nav-item:not(.active) img {
+  filter: brightness(0) invert(0.45);
+}
+.db-section-label {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 8px 12px 4px;
+  margin-top: 8px;
+}
+.db-main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.db-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.db-metric {
+  background: rgba(17, 76, 90, 0.3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  transition: border-color var(--dur-micro) var(--ease-out);
+}
+.db-metric:hover { border-color: var(--border-accent); }
+.db-metric-val {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--forsythia);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.db-metric-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+.db-pipeline {
+  background: rgba(17, 76, 90, 0.2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+}
+.db-pipeline-title {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.db-flow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.db-node {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(17, 76, 90, 0.5);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.db-node.active-node {
+  border-color: var(--border-accent);
+  color: var(--forsythia);
+  background: rgba(255, 200, 1, 0.07);
+}
+.db-node img { width: 12px; height: 12px; }
+.db-node:not(.active-node) img { filter: brightness(0) invert(0.4); }
+.db-node.active-node img { filter: brightness(0) saturate(100%) invert(83%) sepia(80%) saturate(900%) hue-rotate(5deg) brightness(102%); }
+.db-arrow {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+.db-status-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+.db-badge {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+.db-badge-green {
+  color: var(--clr-green);
+  background: rgba(61,214,140,0.1);
+  border: 1px solid rgba(61,214,140,0.25);
+}
+.db-badge-gold {
+  color: var(--forsythia);
+  background: rgba(255,200,1,0.1);
+  border: 1px solid rgba(255,200,1,0.2);
+}
+.db-badge-text { font-size: 0.68rem; color: var(--text-muted); font-family: var(--font-heading); }
+
+@media (max-width: 768px) {
+  .hero-preview { display: none; }
+}
+@media (max-width: 900px) {
+  .dashboard-body { grid-template-columns: 1fr; }
+  .db-sidebar     { display: none; }
+  .db-metrics     { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* =========================================================
+   PRICE CHANGE FLASH — subtle highlight when text updates
+   ========================================================= */
+@keyframes price-flash {
+  0%   { color: var(--forsythia); }
+  100% { color: var(--text-primary); }
+}
+.price-flash {
+  animation: price-flash 0.4s var(--ease-out) forwards;
+}
+
+/* =========================================================
+   SECTION CONNECTOR — subtle top border gradient on sections
+   ========================================================= */
+.section-connector {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/* =========================================================
+   IMPROVED NAV SIGN-IN — hidden on mobile via media query above
+   ========================================================= */
+@media (max-width: 768px) {
+  .header-actions .btn-ghost { display: none; }
+}
