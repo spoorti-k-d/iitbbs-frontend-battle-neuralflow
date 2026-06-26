@@ -352,12 +352,11 @@ h3 { font-size: clamp(1rem, 2vw, 1.25rem); }
    ========================================================= */
 .hero {
   position: relative;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 150px 0 80px;
+  padding: 130px 0 72px;
   overflow: hidden;
 }
 .hero-bg { position: absolute; inset: 0; pointer-events: none; }
@@ -449,8 +448,8 @@ h3 { font-size: clamp(1rem, 2vw, 1.25rem); }
   align-items: center;
   justify-content: center;
   gap: 40px;
-  margin-top: 64px;
-  padding-top: 40px;
+  margin-top: 40px;
+  padding-top: 32px;
   border-top: 1px solid var(--border);
   flex-wrap: wrap;
   animation: fade-up 0.38s var(--ease-out) 0.24s both;
@@ -537,37 +536,21 @@ h3 { font-size: clamp(1rem, 2vw, 1.25rem); }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 48px;
+  gap: 12px;
   flex-wrap: wrap;
-}
-.partner-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  opacity: 0.45;
-  white-space: nowrap;
-  transition: opacity var(--dur-micro) var(--ease-out);
-}
-.partner-logo:hover { opacity: 0.85; }
-.partner-logo img {
-  width: 17px; height: 17px;
-  filter: brightness(0) saturate(100%) invert(90%) sepia(8%) saturate(400%) hue-rotate(80deg) brightness(95%);
 }
 
 /* =========================================================
    FEATURES GRID
    ========================================================= */
 .features-section {
-  padding: 96px 0;
+  padding: 72px 0 80px;
 }
 .section-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 48px;
 }
+.section-header h2 { margin-top: 10px; margin-bottom: 14px; }
 .section-header p {
   font-size: 1.05rem;
   color: var(--text-secondary);
@@ -618,7 +601,7 @@ h3 { font-size: clamp(1rem, 2vw, 1.25rem); }
    BENTO / ACCORDION  (Feature 2 — ZERO external dependencies)
    ========================================================= */
 .bento-section {
-  padding: 80px 0 96px;
+  padding: 72px 0 80px;
   background: linear-gradient(180deg, transparent 0%, rgba(17,76,90,0.15) 50%, transparent 100%);
 }
 .bento-header { text-align: center; margin-bottom: 52px; }
@@ -787,7 +770,7 @@ h3 { font-size: clamp(1rem, 2vw, 1.25rem); }
 /* =========================================================
    PRICING (Feature 1 — price text node isolation)
    ========================================================= */
-.pricing-section { padding: 96px 0; }
+.pricing-section { padding: 72px 0 80px; }
 .pricing-controls {
   display: flex;
   align-items: center;
@@ -950,7 +933,7 @@ h3 { font-size: clamp(1rem, 2vw, 1.25rem); }
 /* =========================================================
    TESTIMONIALS
    ========================================================= */
-.testimonials-section { padding: 96px 0; background: linear-gradient(180deg, transparent, rgba(17,76,90,0.12), transparent); }
+.testimonials-section { padding: 72px 0 80px; background: linear-gradient(180deg, transparent, rgba(17,76,90,0.12), transparent); }
 .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .testi-card {
   padding: 26px;
@@ -981,7 +964,7 @@ h3 { font-size: clamp(1rem, 2vw, 1.25rem); }
 /* =========================================================
    CTA
    ========================================================= */
-.cta-section { padding: 96px 0; }
+.cta-section { padding: 72px 0 80px; }
 .cta-box {
   border-radius: var(--radius-xl);
   padding: 80px 48px;
