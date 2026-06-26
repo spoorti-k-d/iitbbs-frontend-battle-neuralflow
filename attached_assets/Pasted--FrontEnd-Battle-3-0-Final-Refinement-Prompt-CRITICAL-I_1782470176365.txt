@@ -1,0 +1,277 @@
+# FrontEnd Battle 3.0 - Final Refinement Prompt
+
+## CRITICAL INSTRUCTION
+
+Before writing or modifying any code, inspect **every uploaded file individually**:
+
+* Official Problem Statement PDF
+* demo.mp4
+* colorPalette.pdf
+* fonts.pdf
+* Every uploaded SVG asset
+
+Treat these uploaded files as the **single source of truth**.
+
+Do not approximate, infer, or replace them with generic AI knowledge.
+
+Before modifying the codebase, internally analyze and understand:
+
+* Official judging criteria
+* Required architecture
+* Motion demonstrated in demo.mp4
+* Official color palette
+* Official typography
+* Every SVG asset and where it should naturally be integrated
+
+Then inspect the existing React project and create an internal implementation plan before making any code changes.
+
+---
+
+# OBJECTIVE
+
+Do **NOT** regenerate the project.
+
+The current project already has a strong structure and responsive layout.
+
+Your task is to **refine** the existing implementation so it maximizes the FrontEnd Battle Phase 1 judging score while preserving the existing architecture.
+
+Modify only what is necessary.
+
+---
+
+# MANDATORY REQUIREMENTS
+
+## Assets
+
+Use ONLY:
+
+* Uploaded SVG assets
+* Uploaded font specification
+* Uploaded color palette
+
+Replace generic icons with the uploaded SVG assets wherever appropriate.
+
+Do not introduce external icon libraries.
+
+---
+
+## Color Palette
+
+Apply only the uploaded official palette.
+
+Primary Background:
+#172B36
+
+Secondary:
+#114C5A
+
+Primary Accent / CTA:
+#FFC801
+
+Secondary Accent:
+#FF9932
+
+Light:
+#F1F6F4
+
+Muted:
+#D9E8E2
+
+Remove accent colors that are not part of the uploaded palette.
+
+---
+
+## Typography
+
+Use only:
+
+* Inter
+* JetBrains Mono
+
+Follow the uploaded typography specification.
+
+---
+
+# MATCH THE DEMO
+
+Treat demo.mp4 as the primary design reference.
+
+Modify the current implementation to better match:
+
+* Section ordering
+* Layout proportions
+* Visual hierarchy
+* Whitespace
+* Motion language
+* Hover interactions
+* Scroll reveal behaviour
+* Card polish
+* CTA placement
+* Overall enterprise SaaS aesthetic
+
+Do NOT redesign everything.
+
+Refine the existing implementation.
+
+The visual language should resemble a premium enterprise SaaS platform similar to Linear, Vercel and Apple.
+
+---
+
+# FEATURE 1
+
+Implement a dynamic pricing engine using a multi-dimensional configuration object.
+
+Support:
+
+* Monthly
+* Annual
+* INR
+* USD
+* EUR
+* Regional tariff variables
+* 20% annual discount
+
+Do not hardcode displayed prices.
+
+Changing currency or billing must update only the required pricing text while avoiding unnecessary parent re-renders.
+
+---
+
+# FEATURE 2
+
+Desktop:
+
+Responsive Bento Grid
+
+Mobile:
+
+Accordion
+
+When resizing from desktop to mobile, preserve the active Bento card so the matching Accordion panel automatically opens.
+
+Implement using plain React and CSS.
+
+Do not use external UI libraries.
+
+---
+
+# BANNED LIBRARIES
+
+If any banned library is actually used in the implementation, replace that implementation using plain React and CSS.
+
+If a banned library only exists as an unused dependency, do not waste time removing template packages.
+
+Forbidden implementations include:
+
+* Framer Motion
+* Radix UI
+* HeadlessUI
+* Shadcn
+* Tailwind UI
+
+---
+
+# MOTION
+
+Use only:
+
+* CSS transitions
+* CSS animations
+* Native Web Animations API only if absolutely necessary
+
+Timing:
+
+Hover:
+150–200ms ease-out
+
+Layout:
+300–400ms ease-in-out
+
+Add subtle premium interactions:
+
+* Hero reveal
+* Section reveal
+* Card lift
+* Border glow
+* Button polish
+* Pricing transitions
+* Accordion transitions
+
+Do not over-animate.
+
+---
+
+# SEO
+
+Ensure:
+
+* Semantic HTML
+* Single H1
+* Proper heading hierarchy
+* Title
+* Meta description
+* Open Graph
+* Twitter metadata
+* Canonical URL
+* Alt text
+* ARIA labels
+
+---
+
+# PERFORMANCE
+
+Maintain fast Time to Interactive.
+
+Avoid:
+
+* Layout thrashing
+* Unnecessary React renders
+* Unnecessary state updates
+* Heavy JavaScript
+* Blocking animations
+
+Optimize SVG rendering.
+
+Remove unused imports where appropriate.
+
+---
+
+# OPTIONAL POLISH
+
+Only after ALL mandatory requirements are complete, add lightweight premium enhancements that do not affect performance.
+
+Examples:
+
+* Mouse spotlight
+* Scroll progress indicator
+* Animated statistics using requestAnimationFrame
+* Hero sequential reveal
+* Section reveal using IntersectionObserver
+* Premium card hover
+* Button polish
+* Animated pricing transitions
+* Elegant footer interactions
+* Small AI terminal preview in the Hero using CSS + React only
+
+Do not add flashy effects.
+
+The final UI should feel elegant, premium and enterprise-grade.
+
+---
+
+# FINAL VALIDATION
+
+Before finishing:
+
+* Verify compliance with every requirement in the uploaded PDF.
+* Verify the uploaded demo.mp4 has been reflected in layout and motion.
+* Verify uploaded SVG assets are actually used.
+* Verify uploaded fonts are used.
+* Verify uploaded colors are used.
+* Verify Feature 1 satisfies the dynamic pricing requirements.
+* Verify Feature 2 satisfies the Bento-to-Accordion requirement.
+* Verify semantic HTML and SEO.
+* Verify the application builds successfully.
+* Verify responsiveness on mobile, tablet and desktop.
+
+Finally, provide a concise checklist showing how each competition requirement has been satisfied and list any remaining limitations, if any.

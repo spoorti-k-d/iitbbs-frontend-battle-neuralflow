@@ -1,7 +1,9 @@
+import { SocialProofFaces } from "./Partners";
+
 export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-heading">
-      {/* Background */}
+      {/* Background atmosphere */}
       <div className="hero-bg" aria-hidden="true">
         <div className="hero-grid" />
         <div className="hero-orb hero-orb-1" />
@@ -11,13 +13,13 @@ export default function Hero() {
 
       <div className="container">
         <div className="hero-content">
-          {/* Pill badge */}
+          {/* Beta pill */}
           <div className="hero-badge" role="status">
             <span className="hero-badge-dot" aria-hidden="true" />
             Now in public beta — join 12,000+ teams
           </div>
 
-          {/* Single H1 */}
+          {/* Single H1 — per SEO spec */}
           <h1 id="hero-heading" className="hero-title">
             <span className="gradient-text">Automate Intelligence.</span>
             <br />
@@ -25,10 +27,15 @@ export default function Hero() {
           </h1>
 
           <p className="hero-sub">
-            NeuralFlow AI transforms raw data into intelligent action — automatically.
-            Build pipelines that think, adapt, and deliver results at enterprise scale.
+            NeuralFlow AI transforms raw data into intelligent action —
+            automatically. Build pipelines that think, adapt, and deliver
+            results at enterprise scale.
           </p>
 
+          {/* Social proof faces — above CTA for trust */}
+          <SocialProofFaces />
+
+          {/* Primary / secondary CTAs */}
           <div className="hero-actions">
             <a href="#pricing" className="btn btn-primary">
               Start for free
@@ -71,11 +78,11 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Product preview dashboard */}
+          {/* Product dashboard preview */}
           <div className="hero-preview" aria-hidden="true">
             <div className="hero-preview-glow" />
             <div className="dashboard">
-              {/* Window chrome */}
+              {/* macOS-style window chrome */}
               <div className="dashboard-bar">
                 <div className="db-dots">
                   <span className="db-dot db-dot-r" />
@@ -97,7 +104,7 @@ export default function Hero() {
 
               {/* Dashboard body */}
               <div className="dashboard-body">
-                {/* Sidebar nav */}
+                {/* Sidebar */}
                 <aside className="db-sidebar">
                   <span className="db-section-label">Workspace</span>
                   <div className="db-nav-item active">
@@ -123,9 +130,8 @@ export default function Hero() {
                   </div>
                 </aside>
 
-                {/* Main content */}
+                {/* Main panel */}
                 <div className="db-main">
-                  {/* Metric cards */}
                   <div className="db-metrics">
                     <div className="db-metric">
                       <div className="db-metric-val">48k</div>
@@ -145,7 +151,6 @@ export default function Hero() {
                     </div>
                   </div>
 
-                  {/* Pipeline visualization */}
                   <div className="db-pipeline">
                     <div className="db-pipeline-title">Active pipeline — ml-inference</div>
                     <div className="db-flow">

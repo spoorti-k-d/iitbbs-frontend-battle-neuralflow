@@ -1096,6 +1096,94 @@ h3 { font-size: clamp(1rem, 2vw, 1.25rem); }
 }
 
 /* =========================================================
+   REAL PERSON TESTIMONIAL PHOTOS
+   ========================================================= */
+.testi-photo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-accent);
+  flex-shrink: 0;
+  display: block;
+}
+.testi-flag {
+  font-style: normal;
+  font-size: 0.85em;
+}
+
+/* =========================================================
+   PARTNER WORDMARKS — styled company names, no external logos
+   ========================================================= */
+.partner-logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  transition: border-color var(--dur-micro) var(--ease-out), background var(--dur-micro) var(--ease-out);
+  cursor: default;
+  user-select: none;
+}
+.partner-logo:hover {
+  border-color: var(--border-accent);
+  background: var(--bg-card-hover);
+}
+.partner-abbr {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  min-width: 22px;
+  text-align: center;
+  opacity: 0.85;
+}
+.partner-name {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: -0.01em;
+}
+
+/* =========================================================
+   SOCIAL PROOF FACES — stacked avatars strip
+   ========================================================= */
+.social-proof-faces {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+.face-stack {
+  display: flex;
+  align-items: center;
+}
+.face-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--oceanic-noir);
+  margin-left: -10px;
+  flex-shrink: 0;
+  transition: transform var(--dur-micro) var(--ease-out);
+}
+.face-avatar:first-child { margin-left: 0; }
+.face-stack:hover .face-avatar { transform: translateX(0); }
+.social-proof-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+.social-proof-text strong {
+  color: var(--forsythia);
+  font-weight: 700;
+}
+
+/* =========================================================
    SCROLL REVEAL — IntersectionObserver + CSS only
    ========================================================= */
 .reveal {
