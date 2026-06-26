@@ -1,0 +1,366 @@
+You are an expert Senior Frontend Engineer, UI/UX Designer, React Architect, Performance Engineer, and SEO Specialist.
+
+IMPORTANT:
+Before writing any code, carefully read and understand ALL uploaded files.
+
+The uploaded files contain:
+
+1. The official FrontEnd Battle Phase 1 problem statement PDF.
+2. The official asset package ZIP containing:
+
+   * demo.mp4
+   * SVG assets
+   * font specifications
+   * color palette
+
+These files define the official requirements. Follow them exactly.
+
+This is an IIT frontend competition. Build the project as if it will be reviewed by senior frontend engineers.
+
+==========================
+PRIMARY OBJECTIVE
+=================
+
+Create a premium AI SaaS landing page that closely matches the design language, layout quality, motion style, and responsiveness shown in the provided demo video while satisfying every requirement in the problem statement.
+
+==========================
+TECH STACK
+==========
+
+React
+Vite
+Tailwind CSS
+
+JavaScript only.
+
+Do NOT use TypeScript.
+
+==========================
+STRICTLY FORBIDDEN
+==================
+
+Do NOT install or use:
+
+Framer Motion
+Shadcn UI
+Radix UI
+HeadlessUI
+Tailwind UI
+Any external UI component library
+Any animation library
+
+Use only:
+
+Native CSS
+Tailwind CSS
+CSS transitions
+CSS keyframes
+Native Web Animations API only if absolutely necessary.
+
+==========================
+OPTIMIZE FOR REPLIT FREE
+========================
+
+Generate the project intelligently to minimize AI token usage.
+
+Do NOT repeatedly explain decisions.
+
+Do NOT generate unnecessary comments.
+
+Do NOT create unused components.
+
+Do NOT generate placeholder code.
+
+Do NOT generate unnecessary files.
+
+Generate concise, production-ready code.
+
+Keep the architecture modular while minimizing file count.
+
+Generate everything in one complete pass.
+
+==========================
+PROJECT STRUCTURE
+=================
+
+Create a clean scalable structure.
+
+Include only necessary folders.
+
+Organize assets properly.
+
+==========================
+LANDING PAGE
+============
+
+Create:
+
+Header
+
+Hero
+
+Partners / Logos
+
+Features
+
+Bento Feature Section
+
+Pricing
+
+Testimonials
+
+Call To Action
+
+Footer
+
+The UI must feel like:
+
+Linear
+
+Vercel
+
+Stripe
+
+Apple
+
+Modern AI SaaS
+
+Premium enterprise quality.
+
+==========================
+DESIGN
+======
+
+Use ONLY:
+
+Uploaded color palette
+
+Uploaded fonts
+
+Uploaded SVG assets
+
+No external icons.
+
+No external images.
+
+No external fonts.
+
+No external design systems.
+
+Use semantic spacing.
+
+Modern typography.
+
+Glass effects only where appropriate.
+
+Minimalist aesthetic.
+
+==========================
+RESPONSIVE
+==========
+
+Mobile First
+
+Tablet
+
+Laptop
+
+Desktop
+
+No horizontal scrolling.
+
+No overlap.
+
+No layout breaking.
+
+==========================
+SEO
+===
+
+Implement complete SEO.
+
+Include:
+
+title
+
+meta description
+
+Open Graph tags
+
+Twitter tags
+
+canonical URL
+
+semantic HTML
+
+single H1
+
+proper heading hierarchy
+
+alt attributes
+
+accessible buttons
+
+accessible forms
+
+crawlable content
+
+==========================
+SEMANTIC HTML
+=============
+
+Use:
+
+<header>
+
+<nav>
+
+<main>
+
+<section>
+
+<article>
+
+<footer>
+
+Avoid unnecessary div nesting.
+
+==========================
+PERFORMANCE
+===========
+
+Fast loading.
+
+No layout shift.
+
+No unnecessary renders.
+
+Optimize images.
+
+Optimize SVG rendering.
+
+Keep bundle lightweight.
+
+Avoid unnecessary dependencies.
+
+==========================
+FEATURE 1
+=========
+
+Implement a dynamic pricing engine.
+
+Requirements:
+
+Three pricing plans.
+
+Monthly / Annual billing.
+
+Currencies:
+
+INR
+
+USD
+
+EUR
+
+Use a multi-dimensional configuration object.
+
+Compute prices dynamically.
+
+Apply:
+
+Base price
+
+Regional tariff
+
+20% annual discount
+
+No hardcoded UI values.
+
+Architecture should be maintainable.
+
+==========================
+STATE ISOLATION
+===============
+
+Changing currency or billing must update ONLY the price text.
+
+Do NOT trigger unnecessary parent re-renders.
+
+Keep pricing state isolated.
+
+Use proper memoization where appropriate.
+
+==========================
+FEATURE 2
+=========
+
+Desktop:
+
+Responsive Bento Grid.
+
+Mobile:
+
+Accordion.
+
+If the user is interacting with Bento item 3 and resizes to mobile, Accordion item 3 must automatically remain open.
+
+Maintain interaction state across layout changes.
+
+Implement without any external UI libraries.
+
+==========================
+ANIMATIONS
+==========
+
+Use only CSS.
+
+Hover:
+
+150-200ms ease-out.
+
+Layout transitions:
+
+300-400ms ease-in-out.
+
+Match the provided demo video.
+
+Do not over-animate.
+
+Keep animations subtle and premium.
+
+==========================
+ACCESSIBILITY
+=============
+
+Keyboard navigation.
+
+Visible focus states.
+
+ARIA labels where appropriate.
+
+Proper button roles.
+
+Color contrast.
+
+==========================
+FINAL OUTPUT
+============
+
+Generate a complete working project.
+
+Ensure it runs immediately after installation.
+
+No incomplete code.
+
+No TODO placeholders.
+
+No mock implementations.
+
+Everything should be functional.
+
+Provide all required source files.
+
+The project should be deployment-ready on Vercel or Netlify.
+
+Before finishing, verify that every competition requirement has been satisfied and that no banned libraries have been introduced.
